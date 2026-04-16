@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNTT Trong Giao Thông & Đào Tạo Tại Sơn La</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background-color: #eef2f5;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffc107;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+
+        h3 {
+            color: #004085;
+            margin-top: 25px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .media-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .media-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hoặc 'contain' nếu bạn muốn giữ nguyên tỉ lệ gốc của video */
+        }
+
+        .card {
+            background: var(--secondary-color);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CÔNG NGHỆ THÔNG TIN VÀ ỨNG DỤNG</h1>
+        <p>Giao thông vận tải thông minh & Hành trang đào tạo tại Sơn La</p>
+    </header>
+
+    <nav>
+        <a href="#phan1">Phần 1: CNTT trong Giao thông</a>
+        <a href="#phan2">Phần 2: Đào tạo CNTT tại Sơn La</a>
+    </nav>
+
+    <div class="container">
+        <section id="phan1">
+            <h2>Phần 1: CNTT trong Giao thông vận tải</h2>
+
+            <h3>1. Giới thiệu khái quát</h3>
+            <p>Công nghệ thông tin (CNTT) ngày càng đóng vai trò quan trọng trong lĩnh vực giao thông vận tải. Đây là
+                ngành sử dụng các hệ thống máy tính, phần mềm và dữ liệu để quản lý, điều hành và tối ưu hóa hoạt động
+                giao thông. Trước đây, giao thông chủ yếu được quản lý thủ công, phụ thuộc vào con người nên dễ xảy ra
+                ùn tắc và thiếu chính xác. Tuy nhiên, từ khi xuất hiện các công nghệ hiện đại, đặc biệt trong bối cảnh
+                Cách mạng công nghiệp 4.0, ngành giao thông đã có sự chuyển đổi mạnh mẽ sang mô hình giao thông thông
+                minh (ITS - Intelligent Transport Systems).</p>
+
+            <div class="card">
+                <strong>Mục tiêu đẩy mạnh ứng dụng CNTT của nhiều quốc gia (trong đó có Việt Nam):</strong>
+                <ul>
+                    <li>Giảm ùn tắc giao thông</li>
+                    <li>Nâng cao an toàn</li>
+                    <li>Tiết kiệm thời gian và chi phí</li>
+                    <li>Hướng tới xây dựng đô thị thông minh</li>
+                </ul>
+            </div>
+
+            <h3>2. Các ứng dụng tiêu biểu của CNTT trong giao thông</h3>
+
+            <h4>a. Hệ thống điều khiển đèn giao thông thông minh</h4>
+            <p>Đây là hệ thống sử dụng camera, cảm biến và trí tuệ nhân tạo (AI) để theo dõi lưu lượng xe theo thời gian
+                thực, tự động điều chỉnh thời gian đèn xanh – đỏ nhằm giảm ùn tắc tại các nút giao. Ví dụ: Khi một tuyến
+                đường đông xe hơn, hệ thống sẽ kéo dài thời gian đèn xanh để giải tỏa lưu lượng nhanh hơn.</p>
+
+            <div class="media-container">
+                <img src="/camai.png" alt="Hệ thống giao thông thông minh">
+                <p><em>Hệ thống camera và cảm biến theo dõi lưu lượng giao thông</em></p>
+            </div>
+
+            <h4>b. Ứng dụng đặt xe (ride-hailing apps)</h4>
+            <p>Các ứng dụng như Grab, Be,... là ví dụ điển hình của CNTT trong vận tải. Những ứng dụng này kết nối tài
+                xế và hành khách thông qua điện thoại, sử dụng GPS để xác định vị trí, tính toán quãng đường và chi phí
+                tự động. Nhờ đó, người dùng có thể đặt xe nhanh chóng, theo dõi hành trình và thanh toán tiện lợi.</p>
+
+            <div class="media-container">
+                <img src="/ungdungdatxe.png" alt="Camera hành trình trên ô tô">
+                <p><em>Camera giám sát hành trình (hộp đen) gắn trên phương tiện</em></p>
+            </div>
+
+            <h4>c. Hệ thống giám sát hành trình</h4>
+            <p>Đây là hệ thống gắn trên phương tiện (thường gọi là “hộp đen”) giúp theo dõi vị trí, tốc độ, lộ trình xe
+                và ghi lại dữ liệu hành trình. Hệ thống này đặc biệt quan trọng đối với xe kinh doanh vận tải, giúp
+                doanh nghiệp quản lý phương tiện hiệu quả và cơ quan chức năng đảm bảo an toàn giao thông.</p>
+
+            <div class="media-container">
+                <img src="/camhanhtrinh.png" alt="Camera hành trình trên ô tô">
+                <p><em>Camera giám sát hành trình (hộp đen) gắn trên phương tiện</em></p>
+            </div>
+
+            <h3>3. Công việc và Xu hướng tương lai</h3>
+            <p>Ngành này bao gồm nhiều công việc ứng dụng công nghệ như phát triển phần mềm, xây dựng hệ thống giao
+                thông thông minh (ITS), phân tích Big Data, thiết kế hệ thống định vị, và vận hành trung tâm điều khiển.
+            </p>
+            <p>Hiện nay, CNTT trong giao thông đang phát triển mạnh với AI, IoT và Big Data. Nhiều thành phố đã triển
+                khai camera giám sát, thu phí không dừng và trung tâm điều hành giao thông thông minh. Xu hướng tương
+                lai sẽ hướng tới xe tự lái, giao thông xanh và tích hợp toàn bộ hệ thống vào nền tảng số.</p>
+
+            <h3 style="text-align: center;">Video: Tương lai của Giao thông thông minh</h3>
+
+            <div class="video-wrapper">
+                <video controls poster="duong-dan-den-anh-bia.jpg">
+                    <source src="/vid.mp4" type="video/mp4">
+                    Trình duyệt của bạn không hỗ trợ thẻ video.
+                </video>
+            </div>
+        </section>
+
+        <section id="phan2">
+            <h2>Phần 2: Đào tạo CNTT tại Sơn La</h2>
+
+            <h3>1. Các cơ sở đào tạo uy tín</h3>
+
+            <div class="card">
+                <strong>Trường Đại học Tây Bắc (UTB):</strong>
+                <ul>
+                    <li><strong>Địa chỉ:</strong> Phường Quyết Tâm, Thành phố Sơn La.</li>
+                    <li><strong>Đặc điểm:</strong> Đây là trường đại học đa ngành lớn nhất khu vực Tây Bắc, có bề dày
+                        truyền thống đào tạo CNTT.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <strong>Trường Cao đẳng Kỹ thuật Công nghệ Sơn La:</strong>
+                <ul>
+                    <li><strong>Địa chỉ:</strong> Xã Chiềng Ngần, Thành phố Sơn La.</li>
+                    <li><strong>Đặc điểm:</strong> Tập trung đào tạo hệ cao đẳng và trung cấp với định hướng ứng dụng
+                        thực hành, phù hợp cho những người muốn sớm gia nhập thị trường lao động.</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <strong>Đào tạo từ xa (CITD):</strong>
+                <ul>
+                    <li><strong>Đặc điểm:</strong> Giải pháp linh hoạt và tối ưu nếu bạn đang ở Sơn La nhưng muốn sở hữu
+                        bằng đại học từ các trường top đầu tại Hà Nội hoặc TP.HCM mà không cần di chuyển. Việc học diễn
+                        ra 100% online. Tuy nhiên, bạn nên chọn các trường có Trạm đào tạo/Trạm thi gần khu vực phía Bắc
+                        để thuận tiện cho việc thi kết thúc học phần.</li>
+                </ul>
+            </div>
+
+            <h3>2. Tổ hợp xét tuyển và Điểm chuẩn tham khảo</h3>
+            <p>Các cơ sở đào tạo thường áp dụng nhiều tổ hợp môn linh hoạt:</p>
+            <ul>
+                <li>Khối A00: Toán, Vật lí, Hóa học</li>
+                <li>Khối A01: Toán, Vật lí, Tiếng Anh</li>
+                <li>Khối A02: Toán, Vật lí, Sinh học</li>
+                <li>Khối D01: Ngữ văn, Toán, Tiếng Anh</li>
+                <li>Các tổ hợp mới: Toán-Vật lí-Tin học; Toán-Tin học-Tiếng Anh; Toán-Tin học-Công nghệ công nghiệp;
+                    Toán-Ngữ văn-Tin học.</li>
+            </ul>
+
+            <p><strong>Mức điểm chuẩn tham khảo (Ngành CNTT):</strong></p>
+            <ul>
+                <li>Xét điểm thi tốt nghiệp THPT: Dao động khoảng 15.0 - 17.68 điểm.</li>
+                <li>Xét học bạ THPT: Thường cao hơn, dao động khoảng 18.0 - 23.19 điểm (tổng điểm 3 môn).</li>
+                <li>Xét điểm Đánh giá năng lực (ĐH Sư phạm Hà Nội): Khoảng 11.58 điểm.</li>
+            </ul>
+
+            <h3>3. Phương thức tuyển sinh (Dự kiến năm 2026)</h3>
+            <ul>
+                <li><strong>Phương thức 1:</strong> Xét tuyển thẳng và ưu tiên xét tuyển theo quy định của Bộ Giáo dục
+                    và Đào tạo.</li>
+                <li><strong>Phương thức 2:</strong> Xét kết quả thi tốt nghiệp THPT năm 2026.</li>
+                <li><strong>Phương thức 3:</strong> Xét kết quả học tập THPT (Học bạ). Thí sinh cần chuẩn bị học bạ lớp
+                    11 và học kỳ 1 lớp 12 (hoặc cả năm lớp 12 tùy trường).</li>
+                <li><strong>Phương thức 4:</strong> Xét kết quả các kỳ thi Đánh giá năng lực/Đánh giá tư duy (như của
+                    ĐHQG Hà Nội hoặc ĐH Sư phạm Hà Nội).</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy;Copyright - 2026 - Pham Nguyen Hai Minh 12 Anh- All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
