@@ -6,155 +6,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CNTT Trong Giao Thông & Đào Tạo Tại Sơn La</title>
     <style>
+        /* =========================================
+           BIẾN & THIẾT LẬP CHUNG (HUST Style)
+           ========================================= */
         :root {
-            --primary-color: #0056b3;
-            --secondary-color: #f8f9fa;
-            --text-color: #333;
+            --hust-red: #cc0d00;
+            --hust-dark-red: #a00a00;
+            --hust-text: #333333;
+            --hust-bg: #f8f9fa;
+            --hust-border: #dee2e6;
+            --white: #ffffff;
+            --transition-smooth: all 0.3s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
+            font-family: 'Roboto', 'Open Sans', 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--hust-text);
             margin: 0;
             padding: 0;
-            background-color: #eef2f5;
+            background-color: var(--hust-bg);
+            scroll-behavior: smooth;
         }
 
+        /* =========================================
+           HEADER & NAVIGATION
+           ========================================= */
         header {
-            background-color: var(--primary-color);
-            color: white;
+            background-color: var(--white);
+            padding: 30px 0;
+            border-bottom: 5px solid var(--hust-red);
             text-align: center;
-            padding: 2rem 1rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: var(--hust-red);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.1rem;
+            color: #666;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         nav {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            text-align: center;
+            background-color: var(--hust-red);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
         }
 
         nav a {
-            color: white;
+            color: var(--white);
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
+            padding: 18px 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            position: relative;
+            transition: var(--transition-smooth);
         }
 
         nav a:hover {
-            color: #ffc107;
+            background-color: var(--hust-dark-red);
         }
 
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            left: 25px;
+            right: 25px;
+            height: 2px;
+            background-color: var(--white);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        /* =========================================
+           BỐ CỤC NỘI DUNG
+           ========================================= */
         .container {
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 40px;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+            border-radius: 4px;
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 10px;
-            margin-top: 40px;
+            color: var(--hust-red);
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--hust-red);
+            margin-top: 50px;
         }
 
         h3 {
-            color: #004085;
+            border-left: 5px solid var(--hust-red);
+            padding-left: 15px;
+            color: #222;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        h4 {
+            color: #444;
+            font-size: 1.1rem;
             margin-top: 25px;
         }
 
-        ul {
-            padding-left: 20px;
+        ul { padding-left: 25px; }
+        li { margin-bottom: 10px; }
+
+        /* CARDS */
+        .card {
+            border: 1px solid var(--hust-border);
+            border-top: 4px solid var(--hust-red);
+            padding: 25px;
+            margin: 20px 0;
+            background: var(--white);
+            border-radius: 2px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        li {
-            margin-bottom: 8px;
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
+        .card strong {
+            display: block;
+            font-size: 1.1rem;
+            color: var(--hust-red);
+            margin-bottom: 10px;
+        }
+
+        /* MEDIA & VIDEO */
         .media-container {
             text-align: center;
-            margin: 20px 0;
+            margin: 30px 0;
         }
 
         .media-container img {
             max-width: 100%;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--hust-border);
+            padding: 5px;
+            background: #fff;
+            margin: 10px 0;
+            transition: transform 0.3s ease;
+        }
+
+        .media-container img:hover {
+            transform: scale(1.02);
+        }
+
+        .media-container p {
+            color: #666;
+            font-size: 0.9rem;
+            font-style: italic;
         }
 
         .video-wrapper {
             position: relative;
             padding-bottom: 56.25%;
-            /* 16:9 aspect ratio */
             height: 0;
-            margin: 20px 0;
-            border-radius: 8px;
+            margin: 30px 0;
+            background: #000;
+            border: 4px solid var(--hust-border);
+            border-radius: 4px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .video-wrapper video {
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+
+        /* TABLES */
+        table {
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Hoặc 'contain' nếu bạn muốn giữ nguyên tỉ lệ gốc của video */
+            border-collapse: collapse;
+            margin: 25px 0;
         }
 
-        .card {
-            background: var(--secondary-color);
-            border-left: 4px solid var(--primary-color);
+        th {
+            background: var(--hust-red);
+            color: var(--white);
             padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 4px;
+            text-align: left;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
+        td {
+            border: 1px solid var(--hust-border);
+            padding: 12px 15px;
         }
+
+        tr:nth-child(even) { background-color: #f9f9f9; }
+
+        /* FOOTER */
+        footer {
+            background: #222;
+            color: #bbbbbb;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            border-top: 3px solid var(--hust-red);
+            font-size: 0.9rem;
+        }
+
+        /* =========================================
+           ANIMATIONS
+           ========================================= */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                        transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            will-change: opacity, transform;
+        }
+
+        .animate-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
     </style>
 </head>
 
 <body>
 
     <header>
-        <h1>CÔNG NGHỆ THÔNG TIN VÀ ỨNG DỤNG</h1>
-        <p>Giao thông vận tải thông minh & Hành trang đào tạo tại Sơn La</p>
+        <div class="animate-on-scroll">
+            <h1>CÔNG NGHỆ THÔNG TIN VÀ ỨNG DỤNG</h1>
+            <p>Trường THPT Chuyên Sơn La</p>
+        </div>
     </header>
 
     <nav>
-        <a href="#phan1">Phần 1: CNTT trong Giao thông</a>
-        <a href="#phan2">Phần 2: Đào tạo CNTT tại Sơn La</a>
+        <div class="nav-container">
+            <a href="#phan1">CNTT trong Giao thông</a>
+            <a href="#phan2">Đào tạo CNTT tại Sơn La</a>
+        </div>
     </nav>
 
     <div class="container">
         <section id="phan1">
-            <h2>Phần 1: CNTT trong Giao thông vận tải</h2>
+            <h2 class="animate-on-scroll">Phần 1: CNTT trong Giao thông vận tải</h2>
 
-            <h3>1. Giới thiệu khái quát</h3>
-            <p>Công nghệ thông tin (CNTT) ngày càng đóng vai trò quan trọng trong lĩnh vực giao thông vận tải. Đây là
-                ngành sử dụng các hệ thống máy tính, phần mềm và dữ liệu để quản lý, điều hành và tối ưu hóa hoạt động
-                giao thông. Trước đây, giao thông chủ yếu được quản lý thủ công, phụ thuộc vào con người nên dễ xảy ra
-                ùn tắc và thiếu chính xác. Tuy nhiên, từ khi xuất hiện các công nghệ hiện đại, đặc biệt trong bối cảnh
-                Cách mạng công nghiệp 4.0, ngành giao thông đã có sự chuyển đổi mạnh mẽ sang mô hình giao thông thông
-                minh (ITS - Intelligent Transport Systems).</p>
+            <h3 class="animate-on-scroll">1. Giới thiệu khái quát</h3>
+            <p class="animate-on-scroll">Công nghệ thông tin (CNTT) ngày càng đóng vai trò quan trọng trong lĩnh vực giao thông vận tải. Đây là ngành sử dụng các hệ thống máy tính, phần mềm và dữ liệu để quản lý, điều hành và tối ưu hóa hoạt động giao thông. Từ khi xuất hiện các công nghệ hiện đại, đặc biệt trong bối cảnh Cách mạng công nghiệp 4.0, ngành giao thông đã có sự chuyển đổi mạnh mẽ sang mô hình giao thông thông minh (ITS - Intelligent Transport Systems).</p>
 
-            <div class="card">
-                <strong>Mục tiêu đẩy mạnh ứng dụng CNTT của nhiều quốc gia (trong đó có Việt Nam):</strong>
+            <div class="card animate-on-scroll delay-1">
+                <strong>Mục tiêu đẩy mạnh ứng dụng CNTT:</strong>
                 <ul>
                     <li>Giảm ùn tắc giao thông</li>
                     <li>Nâng cao an toàn</li>
@@ -163,49 +296,37 @@
                 </ul>
             </div>
 
-            <h3>2. Các ứng dụng tiêu biểu của CNTT trong giao thông</h3>
+            <h3 class="animate-on-scroll">2. Các ứng dụng tiêu biểu</h3>
 
-            <h4>a. Hệ thống điều khiển đèn giao thông thông minh</h4>
-            <p>Đây là hệ thống sử dụng camera, cảm biến và trí tuệ nhân tạo (AI) để theo dõi lưu lượng xe theo thời gian
-                thực, tự động điều chỉnh thời gian đèn xanh – đỏ nhằm giảm ùn tắc tại các nút giao. Ví dụ: Khi một tuyến
-                đường đông xe hơn, hệ thống sẽ kéo dài thời gian đèn xanh để giải tỏa lưu lượng nhanh hơn.</p>
+            <h4 class="animate-on-scroll">a. Hệ thống điều khiển đèn giao thông thông minh</h4>
+            <p class="animate-on-scroll">Sử dụng camera, cảm biến và trí tuệ nhân tạo (AI) để theo dõi lưu lượng xe theo thời gian thực, tự động điều chỉnh thời gian đèn xanh – đỏ nhằm giảm ùn tắc tại các nút giao.</p>
 
-            <div class="media-container">
+            <div class="media-container animate-on-scroll delay-1">
                 <img src="camai.png" alt="Hệ thống giao thông thông minh">
-                <p><em>Hệ thống camera và cảm biến theo dõi lưu lượng giao thông</em></p>
+                <p>Hệ thống camera và cảm biến theo dõi lưu lượng giao thông</p>
             </div>
 
-            <h4>b. Ứng dụng đặt xe (ride-hailing apps)</h4>
-            <p>Các ứng dụng như Grab, Be,... là ví dụ điển hình của CNTT trong vận tải. Những ứng dụng này kết nối tài
-                xế và hành khách thông qua điện thoại, sử dụng GPS để xác định vị trí, tính toán quãng đường và chi phí
-                tự động. Nhờ đó, người dùng có thể đặt xe nhanh chóng, theo dõi hành trình và thanh toán tiện lợi.</p>
+            <h4 class="animate-on-scroll">b. Ứng dụng đặt xe (ride-hailing apps)</h4>
+            <p class="animate-on-scroll">Các ứng dụng như Grab, Be,... kết nối tài xế và hành khách qua GPS, tính toán quãng đường và chi phí tự động, giúp việc di chuyển trở nên tiện lợi và minh bạch hơn.</p>
 
-            <div class="media-container">
-                <img src="ungdungdatxe.png" alt="Camera hành trình trên ô tô">
-                <p><em>Camera giám sát hành trình (hộp đen) gắn trên phương tiện</em></p>
+            <div class="media-container animate-on-scroll delay-1">
+                <img src="ungdungdatxe.png" alt="Ứng dụng đặt xe">
+                <p>Các ứng dụng kết nối vận tải thông minh</p>
             </div>
 
-            <h4>c. Hệ thống giám sát hành trình</h4>
-            <p>Đây là hệ thống gắn trên phương tiện (thường gọi là “hộp đen”) giúp theo dõi vị trí, tốc độ, lộ trình xe
-                và ghi lại dữ liệu hành trình. Hệ thống này đặc biệt quan trọng đối với xe kinh doanh vận tải, giúp
-                doanh nghiệp quản lý phương tiện hiệu quả và cơ quan chức năng đảm bảo an toàn giao thông.</p>
+            <h4 class="animate-on-scroll">c. Hệ thống giám sát hành trình</h4>
+            <p class="animate-on-scroll">Hệ thống “hộp đen” gắn trên phương tiện giúp theo dõi vị trí, tốc độ và lộ trình, giúp doanh nghiệp quản lý hiệu quả và cơ quan chức năng đảm bảo an toàn.</p>
 
-            <div class="media-container">
-                <img src="camhanhtrinh.png" alt="Camera hành trình trên ô tô">
-                <p><em>Camera giám sát hành trình (hộp đen) gắn trên phương tiện</em></p>
+            <div class="media-container animate-on-scroll delay-1">
+                <img src="camhanhtrinh.png" alt="Camera hành trình">
+                <p>Camera giám sát hành trình gắn trên phương tiện</p>
             </div>
 
-            <h3>3. Công việc và Xu hướng tương lai</h3>
-            <p>Ngành này bao gồm nhiều công việc ứng dụng công nghệ như phát triển phần mềm, xây dựng hệ thống giao
-                thông thông minh (ITS), phân tích Big Data, thiết kế hệ thống định vị, và vận hành trung tâm điều khiển.
-            </p>
-            <p>Hiện nay, CNTT trong giao thông đang phát triển mạnh với AI, IoT và Big Data. Nhiều thành phố đã triển
-                khai camera giám sát, thu phí không dừng và trung tâm điều hành giao thông thông minh. Xu hướng tương
-                lai sẽ hướng tới xe tự lái, giao thông xanh và tích hợp toàn bộ hệ thống vào nền tảng số.</p>
+            <h3 class="animate-on-scroll">3. Công việc và Xu hướng tương lai</h3>
+            <p class="animate-on-scroll">Ngành này bao gồm phát triển phần mềm ITS, phân tích Big Data và vận hành trung tâm điều khiển. Xu hướng tương lai sẽ hướng tới xe tự lái, giao thông xanh và tích hợp toàn diện vào nền tảng số.</p>
 
-            <h3 style="text-align: center;">Video: Tương lai của Giao thông thông minh</h3>
-
-            <div class="video-wrapper">
+            <h3 class="animate-on-scroll" style="text-align: center; border: none;">Video: Tương lai của Giao thông thông minh</h3>
+            <div class="video-wrapper animate-on-scroll delay-1">
                 <video controls>
                     <source src="vid.mp4" type="video/mp4">
                     Trình duyệt của bạn không hỗ trợ thẻ video.
@@ -214,73 +335,105 @@
         </section>
 
         <section id="phan2">
-            <h2>Phần 2: Đào tạo CNTT tại Sơn La</h2>
+            <h2 class="animate-on-scroll">Phần 2: Đào tạo CNTT tại Sơn La</h2>
 
-            <h3>1. Các cơ sở đào tạo uy tín</h3>
+            <h3 class="animate-on-scroll">1. Các cơ sở đào tạo uy tín</h3>
 
-            <div class="card">
-                <strong>Trường Đại học Tây Bắc (UTB):</strong>
+            <div class="card animate-on-scroll">
+                <strong>Trường Đại học Tây Bắc (TBU):</strong>
+                <p>Địa chỉ: Phường Quyết Tâm, Thành phố Sơn La.</p>
                 <ul>
-                    <li><strong>Địa chỉ:</strong> Phường Quyết Tâm, Thành phố Sơn La.</li>
-                    <li><strong>Đặc điểm:</strong> Đây là trường đại học đa ngành lớn nhất khu vực Tây Bắc, có bề dày
-                        truyền thống đào tạo CNTT.</li>
+                    <li>Quy mô tuyển sinh: 150 – 250 sinh viên/năm.</li>
+                    <li>Chất lượng: 90-95% sinh viên tốt nghiệp đúng hạn.</li>
+                    <li>Cơ sở vật chất: Phòng máy hiện đại, thư viện điện tử.</li>
                 </ul>
             </div>
 
-            <div class="card">
+            <div class="media-container animate-on-scroll delay-1">
+                <img src="/DHTB ANH 1.jpg" alt="Đại học Tây Bắc" style="width: 24%;">
+                <img src="/DHTB ANH 2.jpg" alt="Đại học Tây Bắc" style="width: 24%;">
+                <img src="/DHTB ANH 3.jpg" alt="Đại học Tây Bắc" style="width: 24%;">
+                <img src="/DHTB ANH 4.jpg" alt="Đại học Tây Bắc" style="width: 24%;">
+                <p>Môi trường học tập tại Đại học Tây Bắc</p>
+            </div>
+
+            <div class="card animate-on-scroll">
                 <strong>Trường Cao đẳng Kỹ thuật Công nghệ Sơn La:</strong>
+                <p>Địa chỉ: Xã Chiềng Ngần, Thành phố Sơn La.</p>
                 <ul>
-                    <li><strong>Địa chỉ:</strong> Xã Chiềng Ngần, Thành phố Sơn La.</li>
-                    <li><strong>Đặc điểm:</strong> Tập trung đào tạo hệ cao đẳng và trung cấp với định hướng ứng dụng
-                        thực hành, phù hợp cho những người muốn sớm gia nhập thị trường lao động.</li>
+                    <li>Đào tạo hệ Cao đẳng và Trung cấp hướng thực hành.</li>
+                    <li>Ưu điểm: Học phí thấp, thời gian đào tạo ngắn.</li>
+                    <li>Kết quả: Tỉ lệ có việc làm đạt 75% - 80%.</li>
                 </ul>
             </div>
 
-            <div class="card">
-                <strong>Đào tạo từ xa (CITD):</strong>
+            <div class="media-container animate-on-scroll delay-1">
+                <img src="/CAO DANG SLA ANH 1.jpg" alt="Cao đẳng Sơn La" style="width: 32%;">
+                <img src="/CAO DANG SLA ANH 2.jpg" alt="Cao đẳng Sơn La" style="width: 32%;">
+                <img src="/CAO DANG SLA ANH 3.jpg" alt="Cao đẳng Sơn La" style="width: 32%;">
+                <p>Cơ sở vật chất Trường Cao đẳng Kỹ thuật Công nghệ Sơn La</p>
+            </div>
+
+            <h3 class="animate-on-scroll">2. Tuyển sinh & Triển vọng</h3>
+            
+            <div class="card animate-on-scroll delay-1">
+                <strong>Mức điểm chuẩn tham khảo:</strong>
                 <ul>
-                    <li><strong>Đặc điểm:</strong> Giải pháp linh hoạt và tối ưu nếu bạn đang ở Sơn La nhưng muốn sở hữu
-                        bằng đại học từ các trường top đầu tại Hà Nội hoặc TP.HCM mà không cần di chuyển. Việc học diễn
-                        ra 100% online. Tuy nhiên, bạn nên chọn các trường có Trạm đào tạo/Trạm thi gần khu vực phía Bắc
-                        để thuận tiện cho việc thi kết thúc học phần.</li>
+                    <li>Thi tốt nghiệp THPT: 15,0 – 17,7 điểm.</li>
+                    <li>Xét học bạ: 18,0 – 23,2 điểm.</li>
                 </ul>
             </div>
 
-            <h3>2. Tổ hợp xét tuyển và Điểm chuẩn tham khảo</h3>
-            <p>Các cơ sở đào tạo thường áp dụng nhiều tổ hợp môn linh hoạt:</p>
-            <ul>
-                <li>Khối A00: Toán, Vật lí, Hóa học</li>
-                <li>Khối A01: Toán, Vật lí, Tiếng Anh</li>
-                <li>Khối A02: Toán, Vật lí, Sinh học</li>
-                <li>Khối D01: Ngữ văn, Toán, Tiếng Anh</li>
-                <li>Các tổ hợp mới: Toán-Vật lí-Tin học; Toán-Tin học-Tiếng Anh; Toán-Tin học-Công nghệ công nghiệp;
-                    Toán-Ngữ văn-Tin học.</li>
-            </ul>
+            <div class="media-container animate-on-scroll delay-1">
+                <img src="/CO HOI LAM VIEC.jpg" alt="Cơ hội việc làm" style="width: 48%;">
+                <img src="/CO HOI LAM VIEC 2.jpg" alt="Mức lương" style="width: 48%;">
+                <p>Triển vọng nghề nghiệp và mức lương ngành CNTT</p>
+            </div>
 
-            <p><strong>Mức điểm chuẩn tham khảo (Ngành CNTT):</strong></p>
-            <ul>
-                <li>Xét điểm thi tốt nghiệp THPT: Dao động khoảng 15.0 - 17.68 điểm.</li>
-                <li>Xét học bạ THPT: Thường cao hơn, dao động khoảng 18.0 - 23.19 điểm (tổng điểm 3 môn).</li>
-                <li>Xét điểm Đánh giá năng lực (ĐH Sư phạm Hà Nội): Khoảng 11.58 điểm.</li>
-            </ul>
-
-            <h3>3. Phương thức tuyển sinh (Dự kiến năm 2026)</h3>
-            <ul>
-                <li><strong>Phương thức 1:</strong> Xét tuyển thẳng và ưu tiên xét tuyển theo quy định của Bộ Giáo dục
-                    và Đào tạo.</li>
-                <li><strong>Phương thức 2:</strong> Xét kết quả thi tốt nghiệp THPT năm 2026.</li>
-                <li><strong>Phương thức 3:</strong> Xét kết quả học tập THPT (Học bạ). Thí sinh cần chuẩn bị học bạ lớp
-                    11 và học kỳ 1 lớp 12 (hoặc cả năm lớp 12 tùy trường).</li>
-                <li><strong>Phương thức 4:</strong> Xét kết quả các kỳ thi Đánh giá năng lực/Đánh giá tư duy (như của
-                    ĐHQG Hà Nội hoặc ĐH Sư phạm Hà Nội).</li>
-            </ul>
+            <table class="animate-on-scroll">
+                <thead>
+                    <tr>
+                        <th>Kinh nghiệm</th>
+                        <th>Mức lương trung bình</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mới ra trường</td>
+                        <td>7 – 10 triệu đồng/tháng</td>
+                    </tr>
+                    <tr>
+                        <td>Sau 2-3 năm</td>
+                        <td>15 – 25 triệu đồng/tháng</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
     </div>
 
     <footer>
-        <p>&copy;Copyright - 2026 - Pham Nguyen Hai Minh 12 Anh- All rights reserved.</p>
+        <p>&copy; 2026 - Pham Nguyen Hai Minh (12 Anh) - All rights reserved.</p>
     </footer>
 
-</body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const observerOptions = {
+                threshold: 0.15
+            };
 
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
 </html>
