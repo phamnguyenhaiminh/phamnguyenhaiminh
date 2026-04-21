@@ -39,6 +39,27 @@
             text-align: center;
         }
 
+        /* Style cho logo trong header */
+        .header-logo {
+            max-height: 100px;
+            /* Điều chỉnh độ cao tùy ý */
+            width: auto;
+            margin-bottom: 15px;
+            /* Nếu bạn muốn logo có hiệu ứng đổ bóng nhẹ */
+            filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+        }
+
+        /* Nếu bạn muốn logo và tiêu đề nằm ngang hàng trên màn hình lớn */
+        @media (min-width: 768px) {
+            header .animate-on-scroll {
+                display: flex;
+                flex-direction: row;
+                /* Giữ dạng cột nếu muốn logo ở trên */
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
         header h1 {
             margin: 0;
             font-size: 2rem;
@@ -138,8 +159,13 @@
             margin-top: 25px;
         }
 
-        ul { padding-left: 25px; }
-        li { margin-bottom: 10px; }
+        ul {
+            padding-left: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
 
         /* CARDS */
         .card {
@@ -203,8 +229,10 @@
 
         .video-wrapper video {
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
         /* TABLES */
@@ -228,7 +256,9 @@
             padding: 12px 15px;
         }
 
-        tr:nth-child(even) { background-color: #f9f9f9; }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
 
         /* FOOTER */
         footer {
@@ -247,8 +277,8 @@
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1), 
-                        transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: opacity 0.8s cubic-bezier(0.165, 0.84, 0.44, 1),
+                transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
             will-change: opacity, transform;
         }
 
@@ -257,9 +287,17 @@
             transform: translateY(0);
         }
 
-        .delay-1 { transition-delay: 0.1s; }
-        .delay-2 { transition-delay: 0.2s; }
-        .delay-3 { transition-delay: 0.3s; }
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
     </style>
 </head>
 
@@ -267,8 +305,13 @@
 
     <header>
         <div class="animate-on-scroll">
-            <h1>CÔNG NGHỆ THÔNG TIN VÀ ỨNG DỤNG</h1>
-            <p>Trường THPT Chuyên Sơn La</p>
+            <img src="csl.png" alt="Logo" class="header-logo">
+
+            <div class="header-text" style="margin-left: 20px;">
+                <h1>CÔNG NGHỆ THÔNG TIN VÀ ỨNG DỤNG</h1>
+                <p>Trường THPT Chuyên Sơn La</p>
+            </div>
+        </div>
         </div>
     </header>
 
@@ -284,7 +327,11 @@
             <h2 class="animate-on-scroll">Phần 1: CNTT trong Giao thông vận tải</h2>
 
             <h3 class="animate-on-scroll">1. Giới thiệu khái quát</h3>
-            <p class="animate-on-scroll">Công nghệ thông tin (CNTT) ngày càng đóng vai trò quan trọng trong lĩnh vực giao thông vận tải. Đây là ngành sử dụng các hệ thống máy tính, phần mềm và dữ liệu để quản lý, điều hành và tối ưu hóa hoạt động giao thông. Từ khi xuất hiện các công nghệ hiện đại, đặc biệt trong bối cảnh Cách mạng công nghiệp 4.0, ngành giao thông đã có sự chuyển đổi mạnh mẽ sang mô hình giao thông thông minh (ITS - Intelligent Transport Systems).</p>
+            <p class="animate-on-scroll">Công nghệ thông tin (CNTT) ngày càng đóng vai trò quan trọng trong lĩnh vực
+                giao thông vận tải. Đây là ngành sử dụng các hệ thống máy tính, phần mềm và dữ liệu để quản lý, điều
+                hành và tối ưu hóa hoạt động giao thông. Từ khi xuất hiện các công nghệ hiện đại, đặc biệt trong bối
+                cảnh Cách mạng công nghiệp 4.0, ngành giao thông đã có sự chuyển đổi mạnh mẽ sang mô hình giao thông
+                thông minh (ITS - Intelligent Transport Systems).</p>
 
             <div class="card animate-on-scroll delay-1">
                 <strong>Mục tiêu đẩy mạnh ứng dụng CNTT:</strong>
@@ -299,7 +346,8 @@
             <h3 class="animate-on-scroll">2. Các ứng dụng tiêu biểu</h3>
 
             <h4 class="animate-on-scroll">a. Hệ thống điều khiển đèn giao thông thông minh</h4>
-            <p class="animate-on-scroll">Sử dụng camera, cảm biến và trí tuệ nhân tạo (AI) để theo dõi lưu lượng xe theo thời gian thực, tự động điều chỉnh thời gian đèn xanh – đỏ nhằm giảm ùn tắc tại các nút giao.</p>
+            <p class="animate-on-scroll">Sử dụng camera, cảm biến và trí tuệ nhân tạo (AI) để theo dõi lưu lượng xe theo
+                thời gian thực, tự động điều chỉnh thời gian đèn xanh – đỏ nhằm giảm ùn tắc tại các nút giao.</p>
 
             <div class="media-container animate-on-scroll delay-1">
                 <img src="camai.png" alt="Hệ thống giao thông thông minh">
@@ -307,7 +355,8 @@
             </div>
 
             <h4 class="animate-on-scroll">b. Ứng dụng đặt xe (ride-hailing apps)</h4>
-            <p class="animate-on-scroll">Các ứng dụng như Grab, Be,... kết nối tài xế và hành khách qua GPS, tính toán quãng đường và chi phí tự động, giúp việc di chuyển trở nên tiện lợi và minh bạch hơn.</p>
+            <p class="animate-on-scroll">Các ứng dụng như Grab, Be,... kết nối tài xế và hành khách qua GPS, tính toán
+                quãng đường và chi phí tự động, giúp việc di chuyển trở nên tiện lợi và minh bạch hơn.</p>
 
             <div class="media-container animate-on-scroll delay-1">
                 <img src="ungdungdatxe.png" alt="Ứng dụng đặt xe">
@@ -315,7 +364,8 @@
             </div>
 
             <h4 class="animate-on-scroll">c. Hệ thống giám sát hành trình</h4>
-            <p class="animate-on-scroll">Hệ thống “hộp đen” gắn trên phương tiện giúp theo dõi vị trí, tốc độ và lộ trình, giúp doanh nghiệp quản lý hiệu quả và cơ quan chức năng đảm bảo an toàn.</p>
+            <p class="animate-on-scroll">Hệ thống “hộp đen” gắn trên phương tiện giúp theo dõi vị trí, tốc độ và lộ
+                trình, giúp doanh nghiệp quản lý hiệu quả và cơ quan chức năng đảm bảo an toàn.</p>
 
             <div class="media-container animate-on-scroll delay-1">
                 <img src="camhanhtrinh.png" alt="Camera hành trình">
@@ -323,9 +373,12 @@
             </div>
 
             <h3 class="animate-on-scroll">3. Công việc và Xu hướng tương lai</h3>
-            <p class="animate-on-scroll">Ngành này bao gồm phát triển phần mềm ITS, phân tích Big Data và vận hành trung tâm điều khiển. Xu hướng tương lai sẽ hướng tới xe tự lái, giao thông xanh và tích hợp toàn diện vào nền tảng số.</p>
+            <p class="animate-on-scroll">Ngành này bao gồm phát triển phần mềm ITS, phân tích Big Data và vận hành trung
+                tâm điều khiển. Xu hướng tương lai sẽ hướng tới xe tự lái, giao thông xanh và tích hợp toàn diện vào nền
+                tảng số.</p>
 
-            <h3 class="animate-on-scroll" style="text-align: center; border: none;">Video: Tương lai của Giao thông thông minh</h3>
+            <h3 class="animate-on-scroll" style="text-align: center; border: none;">Video: Tương lai của Giao thông
+                thông minh</h3>
             <div class="video-wrapper animate-on-scroll delay-1">
                 <video controls>
                     <source src="vid.mp4" type="video/mp4">
@@ -375,7 +428,7 @@
             </div>
 
             <h3 class="animate-on-scroll">2. Tuyển sinh & Triển vọng</h3>
-            
+
             <div class="card animate-on-scroll delay-1">
                 <strong>Mức điểm chuẩn tham khảo:</strong>
                 <ul>
@@ -436,4 +489,5 @@
         });
     </script>
 </body>
+
 </html>
